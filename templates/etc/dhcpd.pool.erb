@@ -1,0 +1,11 @@
+		pool {
+<% deny.each do |item| -%>
+			deny <%= item %>;
+<% end -%>
+<% allow.each do |item| -%>
+			allow <%= item %>;
+<% end -%>
+			range <%= range %>;
+			default-lease-time <%= default_lease %>;
+			max-lease-time <%= max_lease %>;
+		}
