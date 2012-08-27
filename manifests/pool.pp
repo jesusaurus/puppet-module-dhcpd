@@ -1,3 +1,38 @@
+# Define: dhcpd::pool
+#
+# This resource describes a dhcp pool definition.
+#
+# Parameters:
+#   [*subnet*]
+#     The name of the dhcpd::subnet resource this pool belongs in.
+#
+#   [*deny*]
+#     An array of strings. A match against any item will prevent
+#     this pool being used.
+#
+#   [*allow*]
+#     An array of strings. A match against any item will ensure
+#     this pool being used.
+#
+#   [*range*]
+#     A string containing two IPs separated by a space. Offers from
+#     this pool will contain an IP between the two specified.
+#
+#   [*default_lease*]
+#     An integer representing the default number of seconds until
+#     a dhcp lease expires.
+#
+#   [*max_lease*]
+#     An integer representing the maximum number of seconds until
+#     a dhcp lease expires.
+#
+# Actions:
+#   Create a pool definition within the specified subnet definition.
+#
+# Requires:
+#   Class['concat']
+#   Class['dhcpd']
+#
 define dhcpd::pool (
   $subnet,
   $deny          = [],

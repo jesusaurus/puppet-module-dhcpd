@@ -1,4 +1,4 @@
 subnet <%= network %> netmask <%= netmask %> {
 	option domain-name-servers <% if dns.respond_to?('join') %><%= dns.join(', ') %><% else %><%= dns %><% end %>;
-	option routers <% if routers.respond_to?('join') %><%= routers.join(', ') %><% else %><%= routers %><% end %>;
+	option routers <%= router %>;
 

@@ -1,3 +1,14 @@
+# Define: dhcpd::sharednet
+#
+# This resource describes a dhcp shared network block.
+#
+# Actions:
+#   Create a shared network definition to contain subnet definitions.
+#
+# Requires:
+#   Class['concat']
+#   Class['dhcpd']
+#
 define dhcpd::sharednet {
 
   concat::fragment { "dhcpd_sharednet_$name":

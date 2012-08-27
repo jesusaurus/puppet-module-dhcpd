@@ -1,3 +1,19 @@
+# Class: dhcpd
+#
+# This class manages ISC dhcpd
+#
+# Parameters:
+#   [*domain*]
+#     DNS domain of the server and clients.
+#     Default: domain fact
+#
+# Actions:
+#   Ensures the dhcp server service is running.
+#   Manages /etc/dhcp/dhcpd.conf and /etc/dhcp/dhcpd.conf.d/
+#
+# Requires:
+#   Class['concat']
+#
 class dhcpd (
   $domain = $::domain,
 ) {

@@ -1,3 +1,25 @@
+# Define: dhcpd::subnet::options
+#
+# This resource describes a dhcp subnet block.
+#
+# Parameters:
+#   [*subnet*]
+#     The name of the dhcpd::subnet resource these options belong in.
+#
+#   [*source*]
+#     The IP of the default route.
+#
+#   [*content*]
+#     An array of DNS servers.
+#
+# Actions:
+#   Create a concat::fragment from the specified source or content
+#   describing a raw block of options for a subnet.
+#
+# Requires:
+#   Class['concat']
+#   Class['dhcpd']
+#
 define dhcpd::subnet::options (
   $subnet,
   $source  = '',

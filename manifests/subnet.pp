@@ -1,9 +1,36 @@
+# Define: dhcpd::subnet
+#
+# This resource describes a dhcp subnet block.
+#
+# Parameters:
+#   [*sharednet*]
+#     The name of the dhcpd::sharednet resource this subnet belongs in.
+#
+#   [*network*]
+#     The IP address of the subnet.
+#
+#   [*netmask*]
+#     The netmask for the subnet.
+#
+#   [*router*]
+#     The IP of the default route.
+#
+#   [*dns*]
+#     An array of DNS servers.
+#
+# Actions:
+#   Create a subnet block within the specified shared network block.
+#
+# Requires:
+#   Class['concat']
+#   Class['dhcpd']
+#
 define dhcpd::subnet (
   $sharednet,
   $network = '10.0.0.1',
   $netmask = '255.0.0.0',
+  $router  = '10.0.0.1',
   $dns     = [ '8.8.8.8' ],
-  $routers = [ '10.0.0.1' ],
 ) {
 
   concat::fragment { "dhcpd_subnet_$name":
