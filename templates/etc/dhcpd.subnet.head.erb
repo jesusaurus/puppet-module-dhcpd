@@ -1,4 +1,4 @@
-subnet <%= network %> netmask <%= netmask %> {
-	option domain-name-servers <% if dns.respond_to?('join') %><%= dns.join(', ') %><% else %><%= dns %><% end %>;
-	option routers <%= router %>;
+subnet <%= scope.lookupvar('network') %> netmask <%= scope.lookupvar('netmask') %> {
+	option domain-name-servers <% if scope.lookupvar('dns').respond_to?('join') %><%= scope.lookupvar('dns').join(', ') %><% else %><%= scope.lookupvar('dns') %><% end %>;
+	option routers <%= scope.lookupvar('router') %>;
 

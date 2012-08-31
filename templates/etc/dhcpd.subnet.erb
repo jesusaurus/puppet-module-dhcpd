@@ -1,1 +1,1 @@
-include "/etc/dhcp/dhcpd.conf.d/subnet.<%= name %>";
+include "/etc/dhcp/dhcpd.conf.d/subnet.<%= scope.lookupvar('name') %>";

@@ -1,1 +1,1 @@
-include "/etc/dhcp/dhcpd.conf.d/sharednet.<%= name %>";
+include "/etc/dhcp/dhcpd.conf.d/sharednet.<%= scope.lookupvar('name') %>";

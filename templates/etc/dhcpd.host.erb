@@ -1,4 +1,4 @@
-host <%= $name %> {
-	hardware ethernet <%= $mac %>;
+host <%= scope.lookupvar('name') %> {
+	hardware ethernet <%= scope.lookupvar('mac') %>;
 }
 

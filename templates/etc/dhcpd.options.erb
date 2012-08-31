@@ -1,4 +1,4 @@
 ddns-update-style none;
-option domain-name "<%= domain %>";
+option domain-name "<%= scope.lookupvar('domain') %>";
 authoritative;
 log-facility local7;

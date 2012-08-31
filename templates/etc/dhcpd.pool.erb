@@ -1,11 +1,11 @@
 		pool {
-<% deny.each do |item| -%>
+<% scope.lookupvar('deny').each do |item| -%>
 			deny <%= item %>;
 <% end -%>
-<% allow.each do |item| -%>
+<% scope.lookupvar('allow').each do |item| -%>
 			allow <%= item %>;
 <% end -%>
-			range <%= range %>;
-			default-lease-time <%= default_lease %>;
-			max-lease-time <%= max_lease %>;
+			range <%= scope.lookupvar('range') %>;
+			default-lease-time <%= scope.lookupvar('default_lease') %>;
+			max-lease-time <%= scope.lookupvar('max_lease') %>;
 		}
